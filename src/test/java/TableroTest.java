@@ -1,3 +1,4 @@
+import org.example.Circulo;
 import org.example.Cuadrado;
 import org.example.IFigurable;
 import org.example.Rectangulo;
@@ -57,5 +58,24 @@ public class TableroTest {
                 ()->assertEquals(12,new Rectangulo(2,4).damePerimetro(),0.01)
         );
     }
+    @Test
+    @DisplayName("AreaCiruclo")
+    public void ComprobacionAreaCirculo()
+    {
 
+        assertAll(
+                ()->assertEquals(28.2744,new Circulo(3).dameArea(),0.01),
+                ()->assertEquals(50.2656,new Circulo(4).dameArea(),0.01)
+        );
+    }
+    @Test
+    @DisplayName("PerimetroCirculo")
+    public void ComprobacionPerimetroCirculo()
+    {
+
+        assertAll(
+                ()->assertEquals(12.5664,new Circulo(2).damePerimetro(),0.01),
+                ()->assertEquals(25.1327,new Circulo(4).damePerimetro(),0.01)
+        );
+    }
     }
