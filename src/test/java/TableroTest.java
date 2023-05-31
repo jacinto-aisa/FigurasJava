@@ -1,7 +1,5 @@
-import org.example.Circulo;
-import org.example.Cuadrado;
-import org.example.IFigurable;
-import org.example.Rectangulo;
+import org.example.*;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -17,11 +15,16 @@ public class TableroTest {
     @DisplayName("AreaCuadrado")
     public void ComprobacionAreaCuadrado()
     {
+        IFactoriaFiguras FInicial = new FactoriaDeFiguras();
         assertAll(
-                ()-> assertEquals(75.26,new Cuadrado(8.6755238364654).dameArea(),0.01),
-                ()->assertEquals(4,new Cuadrado(2).dameArea(),0.01)
-        );
+                ()-> assertEquals(75.26,
+                   (FInicial.dameFigura(Forma.Cuadrado,8.6755238364654)).dameArea(),0.01),
+                ()->assertEquals(4,
+                   (FInicial.dameFigura(Forma.Cuadrado,2).dameArea()),0.01),
+                ()->Assert.assertNull(FInicial.dameFigura(Forma.Cuadrado,-2)),
+                ()->Assert.assertNotNull(FInicial.dameFigura(Forma.Cuadrado,22))
 
+        );
     }
 
     @Test
