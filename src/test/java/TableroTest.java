@@ -18,9 +18,11 @@ public class TableroTest {
         IFactoriaFiguras FInicial = new FactoriaDeFiguras();
         assertAll(
                 ()-> assertEquals(75.26,
-                   (FInicial.dameFigura(Forma.Cuadrado,8.6755238364654)).dameArea(),0.01),
+                   (FInicial.dameFigura(Forma.Cuadrado,8.6755238364654))
+                           .dameArea(),0.01),
                 ()->assertEquals(4,
-                   (FInicial.dameFigura(Forma.Cuadrado,2).dameArea()),0.01),
+                   (FInicial.dameFigura(Forma.Cuadrado,2)
+                           .dameArea()),0.01),
                 ()->Assert.assertNull(FInicial.dameFigura(Forma.Cuadrado,-2)),
                 ()->Assert.assertNotNull(FInicial.dameFigura(Forma.Cuadrado,22))
 
@@ -31,10 +33,15 @@ public class TableroTest {
     @DisplayName("PerimetroCuadrado")
     public void ComprobacionPerimetroCuadrado()
     {
-
+        IFactoriaFiguras FInicial = new FactoriaDeFiguras();
         assertAll(
-                ()->assertEquals(8,new Cuadrado(2).damePerimetro(),0.01),
-                ()->assertEquals(16,new Cuadrado(4).damePerimetro(),0.01)
+                ()->assertEquals(8,
+                        (FInicial.dameFigura(Forma.Cuadrado,2))
+                                .damePerimetro(),0.01),
+                ()->assertEquals(16,
+                        (FInicial.dameFigura(Forma.Cuadrado, 4))
+                                .damePerimetro(),0.01)
+
         );
 
 
@@ -45,10 +52,17 @@ public class TableroTest {
     @DisplayName("SuperficieRectangulo")
     public void ComprobacionAreaRectngulo()
     {
-
+        IFactoriaFiguras FInicial = new FactoriaDeFiguras();
         assertAll(
-                ()->assertEquals(8,new Rectangulo(4,2).dameArea(),0.01),
-                ()->assertEquals(8,new Rectangulo(2,4).dameArea(),0.01)
+                ()->assertEquals(
+                        8,
+                        (FInicial.dameFigura(Forma.Rectangulo,2,4).dameArea()),0.01),
+                ()->assertEquals(8,
+                        (FInicial.dameFigura(Forma.Rectangulo,4,2).dameArea()), 0.01),
+                ()->Assert.assertNull(
+                        FInicial.dameFigura(Forma.Rectangulo,-5,3)),
+                ()->Assert.assertNull(
+                        FInicial.dameFigura(Forma.Rectangulo,4,-5))
         );
     }
     @Test
