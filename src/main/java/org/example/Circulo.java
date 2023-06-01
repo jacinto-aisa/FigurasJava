@@ -16,4 +16,9 @@ public class Circulo implements IFigurable{
     public double damePerimetro() {
         return 2*Math.PI*radio;
     }
+
+    @Override
+    public Forma dameForma() {
+        return Forma.Circulo;
+    }
 }

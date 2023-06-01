@@ -4,4 +4,5 @@ public interface IFigurable {
     double dameArea();
     double damePerimetro();
 
+    Forma dameForma();
 }

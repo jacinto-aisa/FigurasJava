@@ -6,8 +6,6 @@ public class Main {
     public static void main(String[] args) {
         // Press Alt+Intro with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        Cuadrado miCuadrado = new Cuadrado(8.6755238364654);
-        System.out.println(miCuadrado);
 
         }
 

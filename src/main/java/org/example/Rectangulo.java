@@ -14,7 +14,10 @@ public class Rectangulo implements IFigurable
     public double dameArea() {
         return ladoLargo*ladoCorto;
     }
-
+    @Override
+    public Forma dameForma() {
+        return Forma.Rectangulo;
+    }
     @Override
     public double damePerimetro() {
         return 2*ladoLargo+2*ladoCorto;

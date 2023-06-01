@@ -15,7 +15,10 @@ public class Cuadrado implements IFigurable{
     public double damePerimetro() {
         return lado*4;
     }
-
+    @Override
+    public Forma dameForma() {
+        return Forma.Cuadrado;
+    }
     @Override
     public String toString() {
         return "Cuadrado{" + "\n" +
